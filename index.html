@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RationRight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">RR</div>
+    <h1>RationRight</h1>
+    <p class="subtitle">Smart & Inclusive Ration Delivery</p>
+  </header>
+
+  <main>
+    <!-- Role Switch -->
+    <section class="card">
+      <label for="roleSelect">Select Role</label>
+      <select id="roleSelect">
+        <option value="beneficiary">Beneficiary</option>
+        <option value="agent">Delivery Agent</option>
+      </select>
+    </section>
+
+    <!-- Login -->
+    <section class="card" id="loginSection">
+      <h2>Login</h2>
+      <input type="text" id="cardNo" placeholder="Ration Card / Agent ID" />
+      <input type="text" id="name" placeholder="Name" />
+      <div class="btn-row">
+        <button id="btnBiometric">Biometric Login</button>
+        <button id="btnSimulate" class="ghost">Simulate Login</button>
+      </div>
+      <button id="btnVoice" class="voice-btn">🔊 Voice Guide</button>
+      <p id="authStatus" class="muted">Not logged in</p>
+    </section>
+
+    <!-- Beneficiary Dashboard -->
+    <section class="card" id="beneficiaryDashboard" style="display:none;">
+      <h2>Your Ration Details</h2>
+      <p><strong>Card:</strong> <span id="rcard"></span></p>
+      <p><strong>Entitlement:</strong> <span id="entitlement"></span></p>
+      <input type="number" id="pickupQty" min="1" value="5" />
+      <div class="btn-row">
+        <button id="requestBtn">Request Delivery</button>
+        <button id="viewHistory" class="ghost">View History</button>
+      </div>
+    </section>
+
+    <!-- Agent Dashboard -->
+    <section class="card" id="agentDashboard" style="display:none;">
+      <h2>Assigned Deliveries</h2>
+      <ul id="taskList"></ul>
+      <button id="markDelivered">Mark as Delivered</button>
+    </section>
+
+    <!-- Ration Preview & Complaint -->
+    <section class="card" id="interaction" style="display:none;">
+      <h2>Preview & Feedback</h2>
+      <input id="photo" type="file" accept="image/*" capture="environment" />
+      <div id="previewBox" class="preview">No photo</div>
+      <button id="confirmDelivery">Confirm Delivery</button>
+      <textarea id="complaint" placeholder="Describe issue"></textarea>
+      <div class="btn-row">
+        <button id="sendComplaint">Submit Complaint</button>
+        <button id="viewComplaints" class="ghost">View Complaints</button>
+      </div>
+    </section>
+
+    <!-- Lists -->
+    <section class="card" id="historySection" style="display:none;">
+      <h2>Request History</h2>
+      <ul id="historyList"></ul>
+    </section>
+
+    <section class="card" id="complaintSection" style="display:none;">
+      <h2>Complaints</h2>
+      <ul id="complaintList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 RationRight — Prototype
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
